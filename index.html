@@ -1,0 +1,55 @@
+// index.html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FINANCIAL MANAGEMENT</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>MANAGEMENT FINANCIAL</h1>
+        <form id="transaction-form">
+            <input type="text" id="transaction-name" placeholder="Transaction Name" required />
+            <input type="number" id="transaction-amount" placeholder="Amount" required />
+
+            <select id="transaction-category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="transaction-date" required />
+            <button type="submit">Add Transaction</button>
+        </form>
+        <div class="expense-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction Name</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-list"></tbody>
+            </table>
+            <div class="total-amount">
+                <strong>Total:</strong> $<span id="total-amount">0</span>
+            </div>
+        </div>
+        <div class="filter">
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+                <option value="All">All</option>
+            </select>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
